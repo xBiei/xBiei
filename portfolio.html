@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>:3</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- todo: Add a note to tell the user to try the website in a laptop to see cool stuff
+        todo: cleanup the code
+        todo: add stylings and underlining to key words
+    -->
+    <div id="theDaddyContainer">
+      <div class="container">
+        <iframe id="magicFrame"></iframe>
+        <a class="arrow-down" href="#about">
+          <i class="fas fa-chevron-down"></i>
+        </a>
+      </div>
+      <div class="portraitOnly">
+        <h1>Switch to Landscape Mode</h1>
+        <img src="rotate.gif" alt="Rotate" />
+      </div>
+      <main>
+        <section id="about">
+          <div class="animatedRect"></div>
+
+          <h2><i style="color: #400589" class="far fa-user"></i> Who am I?</h2>
+          <p>
+            I am a Software Engineer who is interested in modding apps & games, and making them more
+            customizable, smoother, and better. <br />
+            I like making apps and websites that are appealing and pleasing to the eye, and most
+            importantly as smooth and great as it can be. <br />
+            I am very interested in improving the user experience (UX) and making things easier for
+            the users. <br />
+            I learned all my skills by self-learning, achieved high standards, and still improving
+            these skills.
+          </p>
+        </section>
+        <section id="skills">
+          <div class="animatedRect"></div>
+
+          <h2><i class="fas fa-laptop-code"></i> Skills</h2>
+          <div id="skillsGrid">
+            <li><i class="fab fa-html5"></i> HTML</li>
+            <li><i class="fab fa-css3-alt"></i> CSS</li>
+            <li><i class="fab fa-js"></i> JavaScript</li>
+            <li><i class="fab fa-react"></i> React</li>
+            <li><i class="fab fa-node-js"></i> Node.js</li>
+            <li><i class="fas fa-server"></i> Express.js</li>
+            <li><i class="fas fa-database"></i> MongoDB</li>
+          </div>
+        </section>
+        <section id="projects">
+          <div class="animatedRect"></div>
+
+          <h2>Projects</h2>
+          <div id="projectsContainer">
+            <div class="card">
+              <div class="front">
+                <img src="https://xxbi.me/imgs/hodark.jpg" alt="Project 1" />
+                <div class="content">
+                  <h3>Project 1</h3>
+                  <p><small>Click for details</small></p>
+                </div>
+              </div>
+              <div class="back">
+                <div class="content">
+                  <h3>Project 1</h3>
+                  <p>1243feohfweifhnwei dfnwofhnqwsadnpqemj dqpowjdpqwwje</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="front">
+                <img src="https://xxbi.me/imgs/hodark.jpg" alt="Project 1" />
+                <div class="content">
+                  <h3>Project 1</h3>
+                  <p>Click to show details</p>
+                </div>
+              </div>
+              <div class="back">
+                <div class="content">
+                  <h3>Project 1</h3>
+                  <p>1243feohfweifhnwei dfnwofhnqwsadnpqemj dqpowjdpqwwje</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="front">
+                <img src="https://xxbi.me/imgs/hodark.jpg" alt="Project 1" />
+                <div class="content">
+                  <h3>Project 1</h3>
+                  <p>Click to show details</p>
+                </div>
+              </div>
+              <div class="back">
+                <div class="content">
+                  <h3>Project 1</h3>
+                  <p>1243feohfweifhnwei dfnwofhnqwsadnpqemj dqpowjdpqwwje</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="front">
+                <img src="https://xxbi.me/imgs/hodark.jpg" alt="Project 1" />
+                <div class="content">
+                  <h3>Project 1</h3>
+                  <p>Click to show details</p>
+                </div>
+              </div>
+              <div class="back">
+                <div class="content">
+                  <h3>Project 1</h3>
+                  <p>1243feohfweifhnwei dfnwofhnqwsadnpqemj dqpowjdpqwwje</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="modal animatedRect">
+          <div class="modalContent">
+            <div class="modalHeader">
+              <h3></h3>
+              <span class="close">&times;</span>
+            </div>
+            <div class="modalBody">
+              <p>Some text in the Modal Body</p>
+              <p>Some other text...</p>
+            </div>
+            <div class="modalFooter">
+              <h3>Modal Footer</h3>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
