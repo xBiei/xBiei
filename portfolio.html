@@ -14,10 +14,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/css/grid.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   </head>
   <body>
     <!-- todo: Add a note to tell the user to try the website in a laptop to see cool stuff
@@ -33,6 +30,7 @@
       </div>
       <div class="portraitOnly">
         <h1>Switch to Landscape Mode</h1>
+        <h6>or Expand The Window</h6>
         <img src="rotate.gif" alt="Rotate" />
       </div>
       <main>
@@ -80,19 +78,10 @@
         </div>
         <div id="modalContent">
           <div id="carouselWrapper">
-            <div class="splide" role="group" id="modalCarousel" aria-labelledby="carousel-heading">
-              <div class="splide__arrows">
-                <button class="splide__arrow splide__arrow--prev">
-                  <span class="fas fa-chevron-left"></span>
-                </button>
-                <button class="splide__arrow splide__arrow--next">
-                  <span class="fas fa-chevron-right"></span>
-                </button>
-              </div>
-
-              <div class="splide__track">
-                <ul class="splide__list"></ul>
-              </div>
+            <div class="swiper">
+              <div class="swiper-wrapper"></div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
             </div>
           </div>
           <div id="dataContainer" class="container p-0">
@@ -110,7 +99,7 @@
               </div>
               <div class="col-6">
                 <div>
-                  <h3>Used Tech</h3>
+                  <h3>Skills</h3>
                   <div id="modalSkills"></div>
                 </div>
               </div>

@@ -1,6 +1,6 @@
 import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.module.min.js';
 import Projects from './projects.json' assert { type: 'json' };
-import Splide from 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/+esm';
+import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js';
 
 const magicFrame = document.getElementById('magicFrame');
 const styling = magicFrame.contentDocument.createElement('style');
@@ -190,8 +190,8 @@ class CreateParticles {
     this.buttom = false;
 
     this.data = {
-      text: 'Abdullah Mohammed \n a Software Engineer',
-      amount: magicFrame.contentWindow.innerWidth >= 1200 ? 1200 : 800,
+      text: 'Abdullah Mohammed \n   Software Engineer',
+      amount: 1200,
       particleSize: 1,
       particleColor: 0x000,
       textSize: magicFrame.contentWindow.innerWidth >= 1200 ? 8 : 7,
@@ -600,7 +600,7 @@ const openModal = (card) => {
   const modal = document.getElementById('modal');
   const modalBackdrop = document.getElementById('modalBackdrop');
   const modalHeader = document.getElementById('modalHeader');
-  const modalCarousel = document.getElementsByClassName('splide__list')[0];
+  const modalCarousel = document.getElementsByClassName('swiper-wrapper')[0];
   const modalDescription = document.getElementById('modalDescription');
   const modalComment = document.getElementById('modalComment');
   const modalDate = document.getElementById('modalDate');
@@ -635,11 +635,9 @@ const openModal = (card) => {
   modalCarousel.innerHTML = `${JSON.parse(images)
     .map(
       (image) =>
-        `<li class="splide__slide">
-          <div class="splide__slide__container">
-            <img src="${image}" alt="${name}" />
-          </div>
-        </li>`
+        `<div class="swiper-slide">
+            <img src="${image}" alt="${name}">
+        </div>`
     )
     .toString()
     .replaceAll(',', '')}`;
@@ -665,13 +663,13 @@ const openModal = (card) => {
     modalBackdrop.classList.remove('show');
   });
 
-  new Splide('.splide', {
-    type: 'loop',
-    perPage: 1,
-    // autoplay: true,
-    interval: 3000,
-    heightRatio: 0.8
-  }).mount();
+  new Swiper('.swiper', {
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }
+  });
 };
 
 window.openModal = openModal;

@@ -145,10 +145,20 @@ i {
 }
 .portraitOnly h1 {
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 3rem;
+  text-align: center;
+  color: #fff;
+  pointer-events: none;
+}
+
+.portraitOnly h6 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   color: #fff;
   pointer-events: none;
@@ -166,12 +176,12 @@ i {
   opacity: 0.5;
 }
 
-/* @media (orientation: portrait) {
+@media (orientation: portrait) {
   .portraitOnly {
     display: block;
     opacity: 1;
   }
-} */
+}
 
 .animatedRect::before,
 .animatedRect::after {
@@ -232,7 +242,7 @@ hr {
 /* About */
 #about {
   align-self: start;
-  width: 50%;
+  width: 60%;
 
   text-align: left;
   position: relative;
@@ -250,7 +260,7 @@ hr {
 /* Skills */
 
 #skills {
-  width: 50%;
+  width: 60%;
   justify-self: end;
   text-align: left;
   position: relative;
@@ -332,41 +342,15 @@ hr {
   color: #fff;
 }
 
-.front,
-.back {
+.front {
   position: absolute;
   height: 100%;
   width: 100%;
   backface-visibility: hidden;
   transition: transform 0.5s;
-}
-
-.flipped .front {
-  transform: rotateY(180deg);
-  transition: transform 0.5s;
-}
-.back {
-  transform: rotateY(180deg);
-  transition: transform 0.5s;
-}
-.flipped .back {
-  transform: rotateY(0deg);
-  transition: transform 0.5s;
-}
-.card .back .content h3 {
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.card .back .content p {
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  text-align: left;
-  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card:hover {
@@ -375,8 +359,6 @@ hr {
 
 .card .front img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .card .front .content {
@@ -562,6 +544,12 @@ hr {
   grid-template-columns: repeat(2, 1fr);
 }
 
+@media (max-width: 768px) {
+  #modalSkills {
+    grid-template-columns: 1fr;
+  }
+}
+
 #modalBtns {
   display: flex;
   justify-content: space-between;
@@ -603,19 +591,27 @@ hr {
   padding: 10px;
 }
 
-.splide__arrow {
-  background-color: transparent !important;
-  color: #fff !important;
-  font-size: 1rem !important;
+.swiper {
+  width: 100%;
+  height: 100%;
 }
 
-.splide__slide img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.splide {
+.swiper-slide {
   text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #400589 !important;
 }
