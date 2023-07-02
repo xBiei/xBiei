@@ -636,12 +636,16 @@ const openModal = (card) => {
     .map(
       (image) =>
         `<div class="swiper-slide">
+          <div class="swiper-zoom-container">
             <img src="${image}" alt="${name}">
+          </div>
         </div>`
     )
     .toString()
     .replaceAll(',', '')}`;
-  url ? (modalLink.onclick = () => window.open(url, '_blank')) : (modalLink.style.display = 'none');
+  url !== 'null'
+    ? (modalLink.onclick = () => window.open(url, '_blank'))
+    : (modalLink.style.display = 'none');
   github !== 'null'
     ? (modalGithub.onclick = () => window.open(github, '_blank'))
     : (modalGithub.style.display = 'none');
@@ -663,13 +667,14 @@ const openModal = (card) => {
     modalBackdrop.classList.remove('show');
   });
 
-  new Swiper('.swiper', {
+  const swiper = new Swiper('.swiper', {
     loop: true,
+    zoom: true,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
     }
   });
+  swiper.slideTo(1, 0, false);
 };
-
 window.openModal = openModal;

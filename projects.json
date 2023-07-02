@@ -1,30 +1,115 @@
 [
   {
-    "id": 1,
     "name": "Hoplay",
     "description": "Social Gaming platform that aims to serve a a multitude of the competitive needs of the Saudi and ME region gamers.",
-    "comment": "For several years, I’ve been working at Hoplay as a Software Developer making mostly web projects using various technologies and frameworks that I self-learned including but not limited to TypeScript, React. \n I’ve worked on huge database structures and improved the already built pages’ performance and responsivity (improved performance by at least 400%).",
-    "images": ["assets/imgs/hoplay/logo.jpg"],
+    "comment": "For several years, I’ve been working at Hoplay as a Software Developer making mostly web projects using various technologies and frameworks that I self-learned. <br> I’ve worked on huge database structures and improved the already built pages’ performance and responsivity (improved performance by at least 400%).",
+    "images": ["assets/imgs/hoplay/logo.jpg", "assets/imgs/hoplay/logo.jpg"],
     "skills": [
       { "name": "TypeScript" },
+      { "name": "JavaScript" },
       { "name": "React" },
-      { "name": "Redux" },
+      { "name": "React Router" },
       { "name": "Node.js" },
-      { "name": "Express.js" },
-      { "name": "MongoDB" },
-      { "name": "MySQL" },
+      { "name": "Firebase" },
       { "name": "HTML" },
       { "name": "CSS" },
-      { "name": "JavaScript" },
       { "name": "jQuery" },
       { "name": "Bootstrap" },
-      { "name": "SASS" },
+      { "name": "Eslint" },
       { "name": "Git" },
-      { "name": "GitHub" }
+      { "name": "GitHub" },
+      { "name": "Problem Solving" },
+      { "name": "Debugging" }
     ],
     "github": null,
     "url": "https://hoplay.online/",
     "dateStart": "2019",
+    "dateEnd": null
+  },
+  {
+    "name": "Legends Gaming",
+    "description": "a Company that provides a variety of services to the gaming & esports community in the Middle East.",
+    "comment": "Worked as the lead developer on all web pages. <br> Completed development projects using multiple frameworks and technologies.",
+    "images": [
+      "assets/imgs/legends/logo.png",
+      "assets/imgs/legends/landing.png",
+      "assets/imgs/legends/players.png",
+      "assets/imgs/legends/prices.png"
+    ],
+    "skills": [
+      { "name": "TypeScript" },
+      { "name": "JavaScript" },
+      { "name": "React" },
+      { "name": "React Router" },
+      { "name": "Node.js" },
+      { "name": "Firebase" },
+      { "name": "HTML" },
+      { "name": "CSS" },
+      { "name": "Eslint" },
+      { "name": "Git" },
+      { "name": "GitHub" },
+      { "name": "Problem Solving" },
+      { "name": "Debugging" }
+    ],
+    "github": null,
+    "url": "https://legendsgaming.net/",
+    "dateStart": "2022",
+    "dateEnd": null
+  },
+  {
+    "name": "Scopeer",
+    "description": "Scopeer is the leading crowdfunding platform for entrepreneurs startups and growing businesses in Saudi Arabia to connect with potential local and international investors.",
+    "comment": "I've worked with Scopeer for a few months within a team of 4 developers. <br> I was responsible for the front-end development of the project. <br> I've worked on 3 variants of the website that include landing page, user dashboard, admin panel and about 5 extra pages like Terms & Policy and such.",
+    "images": ["assets/imgs/scopeer/logo.png", "assets/imgs/scopeer/landing.png"],
+    "skills": [
+      { "name": "JavaScript" },
+      { "name": "React" },
+      { "name": "React Router" },
+      { "name": "HTML" },
+      { "name": "CSS" },
+      { "name": "Eslint" },
+      { "name": "Git" },
+      { "name": "GitHub" },
+      { "name": "Problem Solving" },
+      { "name": "TeamWork" },
+      { "name": "Collaboration" },
+      { "name": "Debugging" }
+    ],
+    "github": null,
+    "url": "https://scopeer.com/",
+    "dateStart": "2022",
+    "dateEnd": "2023"
+  },
+  {
+    "name": "Workshop Manager (temp name)",
+    "description": "Workshop Manager is a project for organizing and managing car workshop's customers, cars, receipts and more.",
+    "comment": "This project is a request from a car workshop owner to organize the work of the workshop and get the data and the analytics in an organized way to make the workshop more productive and easier to manage. <br> This was a solo project that I've worked on for a few months. <br> I've made this project available to all platforms (Web, Desktop, Mobile) using Electron.js. <br> I've used MongoDB as the database to make it as fast and responsive as it can be. ",
+    "images": [
+      "assets/imgs/workshop/logo.png",
+      "assets/imgs/workshop/login.png",
+      "assets/imgs/workshop/landing.png"
+    ],
+    "skills": [
+      { "name": "TypeScript" },
+      { "name": "ElectronJS" },
+      { "name": "JavaScript" },
+      { "name": "React" },
+      { "name": "React Router" },
+      { "name": "Node.js" },
+      { "name": "MongoDB" },
+      { "name": "HTML" },
+      { "name": "CSS" },
+      { "name": "Eslint" },
+      { "name": "Material UI" },
+      { "name": "Localization" },
+      { "name": "Git" },
+      { "name": "GitHub" },
+      { "name": "Problem Solving" },
+      { "name": "Debugging" }
+    ],
+    "github": null,
+    "url": null,
+    "dateStart": "2022",
     "dateEnd": null
   }
 ]
