@@ -643,12 +643,16 @@ const openModal = (card) => {
     )
     .toString()
     .replaceAll(',', '')}`;
-  url !== 'null'
-    ? (modalLink.onclick = () => window.open(url, '_blank'))
-    : (modalLink.style.display = 'none');
-  github !== 'null'
-    ? (modalGithub.onclick = () => window.open(github, '_blank'))
-    : (modalGithub.style.display = 'none');
+
+  if (url !== 'null') {
+    modalLink.onclick = () => window.open(url, '_blank');
+    modalLink.style.display = 'block';
+  } else modalLink.style.display = 'none';
+
+  if (github !== 'null') {
+    modalGithub.onclick = () => window.open(github, '_blank');
+    modalGithub.style.display = 'block';
+  } else modalGithub.style.display = 'none';
 
   modal.classList.add('show');
   modal.classList.add('inview');
