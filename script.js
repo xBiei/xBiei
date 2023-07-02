@@ -1,3 +1,6 @@
+import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.module.min.js';
+import Projects from './projects.json' assert { type: 'json' };
+
 const magicFrame = document.getElementById('magicFrame');
 const styling = magicFrame.contentDocument.createElement('style');
 const vertexShader = magicFrame.contentDocument.createElement('script');
@@ -5,7 +8,7 @@ const fragmentShader = magicFrame.contentDocument.createElement('script');
 const magicContainer = magicFrame.contentDocument.createElement('div');
 const magicParent = magicFrame.contentDocument.createElement('div');
 
-magicContainer.setAttribute('id', 'container');
+magicContainer.setAttribute('id', 'mContainer');
 magicParent.setAttribute('id', 'magic');
 
 vertexShader.setAttribute('type', 'x-shader/x-vertex');
@@ -56,7 +59,7 @@ body {
 body {
   max-width: 1500px;
 }
-#container {
+#mContainer {
   position: relative;
   width: 100%;
   height: 100%;
@@ -79,7 +82,7 @@ magicFrame.contentDocument.head.appendChild(vertexShader);
 magicFrame.contentDocument.head.appendChild(fragmentShader);
 magicFrame.contentDocument.head.appendChild(styling);
 magicFrame.contentDocument.body.appendChild(magicContainer);
-magicFrame.contentDocument.getElementById('container').appendChild(magicParent);
+magicFrame.contentDocument.getElementById('mContainer').appendChild(magicParent);
 
 const preload = () => {
   let manager = new THREE.LoadingManager();
@@ -499,23 +502,6 @@ sections.forEach((section, index) => {
   sectionsObserver.observe(section);
 });
 
-document.querySelectorAll('.card').forEach((card) => {
-  card.addEventListener('click', () => {
-    // card.classList.toggle('flipped');
-    // Show modal with card info
-    var modal = document.querySelector('.modal');
-    modal.classList.add('show');
-    modal.classList.add('inview');
-    modal.querySelector('.modalBody').innerHTML = card.querySelector('.back').innerHTML;
-    modal.querySelector('.modalHeader').innerHTML = card.querySelector('.front').innerHTML;
-    modal.querySelector('.close').addEventListener('click', () => {
-      modal.classList.remove('show');
-    }
-    );
-
-  });
-});
-
 // window.requestAnimationFrame =
 //   window.requestAnimationFrame ||
 //   window.mozRequestAnimationFrame ||
@@ -577,3 +563,97 @@ document.querySelectorAll('.card').forEach((card) => {
 // steps.forEach((section, index) => {
 //   stepsObserver.observe(section);
 // });
+
+// Projects Load
+
+const projectsContainer = document.getElementById('projectsContainer');
+Projects.forEach((project) => {
+  const projectDiv = document.createElement('div');
+  projectDiv.classList.add('project');
+  projectDiv.setAttribute('description', project.description);
+  projectDiv.setAttribute('comment', project.comment);
+  projectDiv.setAttribute('dateStart', project.dateStart);
+  projectDiv.setAttribute('dateEnd', project.dateEnd);
+  projectDiv.setAttribute('images', project.images);
+  projectDiv.setAttribute('name', project.name);
+  projectDiv.setAttribute('url', project.url);
+  projectDiv.setAttribute('github', project.github);
+  projectDiv.setAttribute('skills', JSON.stringify(project.skills));
+
+  projectDiv.innerHTML = `
+  <div class="card" onclick="openModal(this)">
+  <div class="front">
+    <img src="${project.images[0]}" alt="Project 1" />
+    <div class="content">
+      <h3>${project.name}</h3>
+      <p><small>Click for details</small></p>
+    </div>
+  </div>
+</div>`;
+  projectsContainer.appendChild(projectDiv);
+});
+
+const openModal = (card) => {
+  const cardParent = card.parentNode;
+  // Show modal with card info
+  const modal = document.getElementById('modal');
+  const modalBackdrop = document.getElementById('modalBackdrop');
+  const modalHeader = document.getElementById('modalHeader');
+  const modalContent = document.getElementById('modalContent');
+  const modalCarousel = document.getElementById('modalCarousel');
+  const modalDescription = document.getElementById('modalDescription');
+  const modalComment = document.getElementById('modalComment');
+  const modalDate = document.getElementById('modalDate');
+  const modalSkills = document.getElementById('modalSkills');
+  const modalLink = document.getElementById('modalLink');
+  const modalGithub = document.getElementById('modalGithub');
+
+  // project data
+  let images = cardParent.getAttribute('images').split(',');
+  const name = cardParent.getAttribute('name');
+  const url = cardParent.getAttribute('url');
+  const github = cardParent.getAttribute('github');
+  const description = cardParent.getAttribute('description');
+  const comment = cardParent.getAttribute('comment');
+  const date =
+    cardParent.getAttribute('dateStart') === cardParent.getAttribute('dateEnd')
+      ? cardParent.getAttribute('dateStart')
+      : `${cardParent.getAttribute('dateStart')} ~ ${
+          cardParent.getAttribute('dateEnd') !== 'null'
+            ? cardParent.getAttribute('dateEnd')
+            : 'Present'
+        }`;
+  const skills = cardParent.getAttribute('skills').split(',');
+
+  modalComment.innerHTML = comment;
+  modalDescription.innerHTML = description;
+  modalDate.innerHTML = `Date: ${date}`;
+  modalSkills.innerHTML = `${JSON.parse(skills)
+    .map((skill) => `<li>${skill.name}</li>`)
+    .toString()
+    .replaceAll(',', '')}`;
+  modalCarousel.innerHTML = images.map((image) => `<img src="${image}" alt="${name}" />`);
+  url ? (modalLink.onclick = () => window.open(url, '_blank')) : (modalLink.style.display = 'none');
+  github !== 'null'
+    ? (modalGithub.onclick = () => window.open(github, '_blank'))
+    : (modalGithub.style.display = 'none');
+
+  modal.classList.add('show');
+  modal.classList.add('inview');
+
+  modalBackdrop.classList.add('show');
+
+  modalHeader.getElementsByTagName('h3')[0].innerHTML = name;
+
+  modal.querySelector('.close').addEventListener('click', () => {
+    modal.classList.remove('show');
+    modalBackdrop.classList.remove('show');
+  });
+
+  modalBackdrop.addEventListener('click', () => {
+    modal.classList.remove('show');
+    modalBackdrop.classList.remove('show');
+  });
+};
+
+window.openModal = openModal;

@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Hoplay",
+    "description": "Social Gaming platform that aims to serve a a multitude of the competitive needs of the Saudi and ME region gamers.",
+    "comment": "For several years, I’ve been working at Hoplay as a Software Developer making mostly web projects using various technologies and frameworks that I self-learned including but not limited to TypeScript, React. \n I’ve worked on huge database structures and improved the already built pages’ performance and responsivity (improved performance by at least 400%).",
+    "images": ["assets/imgs/hoplay/logo.jpg"],
+    "skills": [
+      { "name": "TypeScript" },
+      { "name": "React" },
+      { "name": "Redux" },
+      { "name": "Node.js" },
+      { "name": "Express.js" },
+      { "name": "MongoDB" },
+      { "name": "MySQL" },
+      { "name": "HTML" },
+      { "name": "CSS" },
+      { "name": "JavaScript" },
+      { "name": "jQuery" },
+      { "name": "Bootstrap" },
+      { "name": "SASS" },
+      { "name": "Git" },
+      { "name": "GitHub" }
+    ],
+    "github": null,
+    "url": "https://hoplay.online/",
+    "dateStart": "2019",
+    "dateEnd": null
+  }
+]

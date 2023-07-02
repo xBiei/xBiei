@@ -13,6 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./assets/css/grid.min.css" />
   </head>
   <body>
     <!-- todo: Add a note to tell the user to try the website in a laptop to see cool stuff
@@ -20,7 +21,7 @@
         todo: add stylings and underlining to key words
     -->
     <div id="theDaddyContainer">
-      <div class="container">
+      <div class="mContainer">
         <iframe id="magicFrame"></iframe>
         <a class="arrow-down" href="#about">
           <i class="fas fa-chevron-down"></i>
@@ -64,87 +65,54 @@
           <div class="animatedRect"></div>
 
           <h2>Projects</h2>
-          <div id="projectsContainer">
-            <div class="card">
-              <div class="front">
-                <img src="https://xxbi.me/imgs/hodark.jpg" alt="Project 1" />
-                <div class="content">
-                  <h3>Project 1</h3>
-                  <p><small>Click for details</small></p>
-                </div>
-              </div>
-              <div class="back">
-                <div class="content">
-                  <h3>Project 1</h3>
-                  <p>1243feohfweifhnwei dfnwofhnqwsadnpqemj dqpowjdpqwwje</p>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="front">
-                <img src="https://xxbi.me/imgs/hodark.jpg" alt="Project 1" />
-                <div class="content">
-                  <h3>Project 1</h3>
-                  <p>Click to show details</p>
-                </div>
-              </div>
-              <div class="back">
-                <div class="content">
-                  <h3>Project 1</h3>
-                  <p>1243feohfweifhnwei dfnwofhnqwsadnpqemj dqpowjdpqwwje</p>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="front">
-                <img src="https://xxbi.me/imgs/hodark.jpg" alt="Project 1" />
-                <div class="content">
-                  <h3>Project 1</h3>
-                  <p>Click to show details</p>
-                </div>
-              </div>
-              <div class="back">
-                <div class="content">
-                  <h3>Project 1</h3>
-                  <p>1243feohfweifhnwei dfnwofhnqwsadnpqemj dqpowjdpqwwje</p>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="front">
-                <img src="https://xxbi.me/imgs/hodark.jpg" alt="Project 1" />
-                <div class="content">
-                  <h3>Project 1</h3>
-                  <p>Click to show details</p>
-                </div>
-              </div>
-              <div class="back">
-                <div class="content">
-                  <h3>Project 1</h3>
-                  <p>1243feohfweifhnwei dfnwofhnqwsadnpqemj dqpowjdpqwwje</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div id="projectsContainer"></div>
         </section>
-        <div class="modal animatedRect">
-          <div class="modalContent">
-            <div class="modalHeader">
-              <h3></h3>
-              <span class="close">&times;</span>
-            </div>
-            <div class="modalBody">
-              <p>Some text in the Modal Body</p>
-              <p>Some other text...</p>
-            </div>
-            <div class="modalFooter">
-              <h3>Modal Footer</h3>
+      </main>
+      <div id="modalBackdrop"></div>
+      <div id="modal" tabindex="1">
+        <div id="modalHeader">
+          <h3>Hoplay</h3>
+          <button class="close">&times;</button>
+        </div>
+        <div id="modalContent">
+          <div id="carouselWrapper">
+            <div id="modalCarousel"></div>
+          </div>
+          <div id="dataContainer" class="container p-0">
+            <div class="row">
+              <div class="col-12 mb-5">
+                <div>
+                  <p><small>Description:</small></p>
+                  <h2 id="modalDescription"></h2>
+                </div>
+              </div>
+              <div class="col-6 pe-4">
+                <div>
+                  <h4 id="modalComment"></h4>
+                </div>
+              </div>
+              <div class="col-6">
+                <div>
+                  <h3>Used Tech</h3>
+                  <div id="modalSkills"></div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div>
+                  <h6 id="modalDate"></h6>
+                </div>
+                <div class="col-12">
+                  <div id="modalBtns">
+                    <button id="modalLink">Website</button>
+                    <button id="modalGithub">Source</button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </main>
+      </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
