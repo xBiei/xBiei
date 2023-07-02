@@ -1,5 +1,6 @@
 import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.module.min.js';
 import Projects from './projects.json' assert { type: 'json' };
+import Splide from 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/+esm';
 
 const magicFrame = document.getElementById('magicFrame');
 const styling = magicFrame.contentDocument.createElement('style');
@@ -574,7 +575,7 @@ Projects.forEach((project) => {
   projectDiv.setAttribute('comment', project.comment);
   projectDiv.setAttribute('dateStart', project.dateStart);
   projectDiv.setAttribute('dateEnd', project.dateEnd);
-  projectDiv.setAttribute('images', project.images);
+  projectDiv.setAttribute('images', JSON.stringify(project.images));
   projectDiv.setAttribute('name', project.name);
   projectDiv.setAttribute('url', project.url);
   projectDiv.setAttribute('github', project.github);
@@ -599,8 +600,7 @@ const openModal = (card) => {
   const modal = document.getElementById('modal');
   const modalBackdrop = document.getElementById('modalBackdrop');
   const modalHeader = document.getElementById('modalHeader');
-  const modalContent = document.getElementById('modalContent');
-  const modalCarousel = document.getElementById('modalCarousel');
+  const modalCarousel = document.getElementsByClassName('splide__list')[0];
   const modalDescription = document.getElementById('modalDescription');
   const modalComment = document.getElementById('modalComment');
   const modalDate = document.getElementById('modalDate');
@@ -632,7 +632,17 @@ const openModal = (card) => {
     .map((skill) => `<li>${skill.name}</li>`)
     .toString()
     .replaceAll(',', '')}`;
-  modalCarousel.innerHTML = images.map((image) => `<img src="${image}" alt="${name}" />`);
+  modalCarousel.innerHTML = `${JSON.parse(images)
+    .map(
+      (image) =>
+        `<li class="splide__slide">
+          <div class="splide__slide__container">
+            <img src="${image}" alt="${name}" />
+          </div>
+        </li>`
+    )
+    .toString()
+    .replaceAll(',', '')}`;
   url ? (modalLink.onclick = () => window.open(url, '_blank')) : (modalLink.style.display = 'none');
   github !== 'null'
     ? (modalGithub.onclick = () => window.open(github, '_blank'))
@@ -654,6 +664,14 @@ const openModal = (card) => {
     modal.classList.remove('show');
     modalBackdrop.classList.remove('show');
   });
+
+  new Splide('.splide', {
+    type: 'loop',
+    perPage: 1,
+    // autoplay: true,
+    interval: 3000,
+    heightRatio: 0.8
+  }).mount();
 };
 
 window.openModal = openModal;
