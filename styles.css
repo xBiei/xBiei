@@ -242,7 +242,7 @@ hr {
 /* About */
 #about {
   align-self: start;
-  width: 60%;
+  width: 80%;
 
   text-align: left;
   position: relative;
@@ -273,7 +273,7 @@ hr {
 /* Skills */
 
 #skills {
-  width: 60%;
+  width: 80%;
   justify-self: end;
   text-align: left;
   position: relative;
