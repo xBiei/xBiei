@@ -43,6 +43,12 @@ body {
   scrollbar-width: thin !important;
 }
 
+@media (max-width: 1024px) {
+  html {
+    zoom: 0.8;
+  }
+}
+
 #magicFrame {
   width: 100vw;
   max-width: 1500px;
@@ -460,7 +466,7 @@ hr {
   transform: translate(-50%, -50%);
   z-index: 1000;
   width: 70%;
-  height: 80%;
+  max-height: 100vh;
   border-radius: 20px;
   border: #400589 2px solid;
   box-shadow: 0 0 30px 10px #40058950;
@@ -472,7 +478,6 @@ hr {
   opacity: 0;
   pointer-events: none;
   transition: 0.5s;
-  overflow: hidden;
 }
 
 #modal.show {
@@ -513,7 +518,7 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   padding: 10px;
   box-sizing: border-box;
   margin-top: 10px;
@@ -523,13 +528,14 @@ hr {
 
 #carouselWrapper {
   width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
   position: relative;
   overflow: hidden;
 }
 
 #dataContainer {
-  overflow-y: scroll;
-  overflow-x: hidden;
+  max-height: 90vh;
 }
 
 #modalSkills {
