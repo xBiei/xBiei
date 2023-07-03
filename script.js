@@ -1,6 +1,7 @@
 import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.module.min.js';
-import Projects from './projects.json' assert { type: 'json' };
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js';
+
+const Projects = await fetch('./projects.json').then((res) => res.json());
 
 const magicFrame = document.getElementById('magicFrame');
 const styling = magicFrame.contentDocument.createElement('style');
