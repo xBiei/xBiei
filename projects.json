@@ -3,7 +3,7 @@
     "name": "Hoplay",
     "description": "Social Gaming platform that aims to serve a a multitude of the competitive needs of the Saudi and ME region gamers.",
     "comment": "For several years, I’ve been working at Hoplay as a Software Developer making mostly web projects using various technologies and frameworks that I self-learned. <br> I’ve worked on huge database structures and improved the already built pages’ performance and responsivity (improved performance by at least 400%).",
-    "images": ["assets/imgs/hoplay/logo.jpg", "assets/imgs/hoplay/logo.jpg"],
+    "images": ["assets/imgs/hoplay/logo.png"],
     "skills": [
       { "name": "TypeScript" },
       { "name": "JavaScript" },
