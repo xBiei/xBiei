@@ -111,5 +111,30 @@
     "url": null,
     "dateStart": "2022",
     "dateEnd": null
+  },
+  {
+    "name": "Qaswarah",
+    "description": "Qaswarah Estate Company is a leading Saudi company, aims to grow in the real estate sector in the Kingdom of Saudi Arabia and expand its business around the world.",
+    "comment": "Developed all web pages using React.js and React Router",
+    "images": [
+      "assets/imgs/qaswarah/Logo.svg",
+      "assets/imgs/qaswarah/img.png",
+      "assets/imgs/qaswarah/img1.png",
+      "assets/imgs/qaswarah/img2.png"
+    ],
+    "skills": [
+      { "name": "JavaScript" },
+      { "name": "React" },
+      { "name": "React Router" },
+      { "name": "HTML" },
+      { "name": "CSS" },
+      { "name": "Localization" },
+      { "name": "Git" },
+      { "name": "GitHub" }
+    ],
+    "github": null,
+    "url": "https://qaswarah.sa/",
+    "dateStart": "2022",
+    "dateEnd": null
   }
 ]
