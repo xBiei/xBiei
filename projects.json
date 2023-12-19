@@ -136,5 +136,38 @@
     "url": "https://qaswarah.sa/",
     "dateStart": "2022",
     "dateEnd": null
+  },
+  {
+    "name": "Dammam Library",
+    "description": "Dammam Library is a cross-platform mobile app used to view a library containing categories of courses and its books to be used by university students.",
+    "comment": "Developed the mobile app using React Native and React Navigation, tested the app on both Android and iOS devices.",
+    "images": [
+      "assets/imgs/dammamlib/logo.png",
+      "assets/imgs/dammamlib/1.png",
+      "assets/imgs/dammamlib/2.png",
+      "assets/imgs/dammamlib/3.png",
+      "assets/imgs/dammamlib/4.png",
+      "assets/imgs/dammamlib/5.png",
+      "assets/imgs/dammamlib/6.png",
+      "assets/imgs/dammamlib/7.png",
+      "assets/imgs/dammamlib/8.png"
+    ],
+    "skills": [
+      { "name": "TypeScript" },
+      { "name": "React" },
+      { "name": "React Native" },
+      { "name": "Expo" },
+      { "name": "React Navigation" },
+      { "name": "Material UI" },
+      { "name": "Tailwind CSS" },
+      { "name": "Localization" },
+      { "name": "Firebase" },
+      { "name": "Git" },
+      { "name": "GitHub" }
+    ],
+    "github": null,
+    "url": null,
+    "dateStart": "2023",
+    "dateEnd": "2023"
   }
 ]
