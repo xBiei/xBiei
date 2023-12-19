@@ -585,7 +585,7 @@ Projects.forEach((project) => {
   projectDiv.innerHTML = `
   <div class="card" onclick="openModal(this)">
   <div class="front">
-    <img src="${project.images[0]}" alt="Project 1" />
+    <img src="${project.images[0]}" alt="Project 1" class="projectLogo" />
     <div class="content">
       <h3>${project.name}</h3>
       <p><small>Click for details</small></p>

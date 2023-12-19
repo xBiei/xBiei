@@ -614,3 +614,9 @@ hr {
 .swiper-button-prev {
   color: #400589 !important;
 }
+
+.projectLogo {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+}
